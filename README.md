@@ -1,41 +1,222 @@
+# 🧠 Brain Tumor Classification using Mendeley & Figshare Datasets
 
-# LiteGAN-FedNet: Explainable Federated Learning for Brain Tumor MRI Classification
+## 📌 Overview
 
-LiteGAN-FedNet is a lightweight and explainable federated learning framework designed for multi-class brain tumor MRI classification in privacy-constrained medical environments. The framework enables collaborative model training across decentralized institutions without sharing raw patient data.
+This project focuses on **brain tumor classification** using medical imaging datasets from **Mendeley** and **Figshare**.
 
-The proposed approach integrates deep feature extraction, feature augmentation, dimensionality reduction, and explainable AI within a unified federated learning pipeline.
+The goal is to build a **robust deep learning pipeline** that can generalize across multiple datasets and improve classification performance.
 
-## Key Components
+---
 
-- **ResNet18 Feature Extraction**  
-  Extracts discriminative deep feature embeddings from MRI images.
+## 🚀 Key Features
 
-- **Conditional GAN (cGAN) Feature Augmentation**  
-  Generates class-conditioned feature representations to address class imbalance across decentralized clients.
+* ✅ Multi-dataset training (Mendeley + Figshare)
+* ✅ Medical image classification pipeline
+* ✅ Deep learning-based feature extraction
+* ✅ Modular and reusable training code
+* ✅ Scalable for research and real-world applications
 
-- **PCA-based Feature Compression**  
-  Reduces feature dimensionality to minimize communication overhead during federated aggregation.
+---
 
-- **Federated Learning (FedAvg)**  
-  Enables collaborative training across multiple simulated hospital clients without sharing raw medical images.
+## 🏗️ Project Structure
 
-- **Explainable AI (XAI)**  
-  Provides model interpretability using:
-  - Grad-CAM (spatial explanations)
-  - SHAP (global feature importance)
-  - LIME (local instance explanations)
+---id="p2a91x"
+Brain-Tumor-Classification/
+│
+├── data/
+│   ├── mendeley/
+│   ├── figshare/
+│
+├── notebooks/
+│   ├── training_mendeley.ipynb
+│   └── training_figshare.ipynb
+│
+├── src/
+│   ├── dataset.py
+│   ├── model.py
+│   ├── train.py
+│   └── utils.py
+│
+├── results/
+│   ├── plots/
+│   └── metrics.txt
+│
+├── models/
+│   └── saved_model.pth
+│
+├── requirements.txt
+└── README.md
+```
 
-## Features
+```
 
-- Privacy-aware distributed medical AI framework
-- Communication-efficient federated learning
-- Class imbalance mitigation using generative models
-- Multi-level explainability for clinical interpretability
-- Reproducible experimental pipeline
+## 🗂️ Datasets
 
-## Applications
+### 📍 Mendeley Dataset
 
-- Brain tumor MRI classification
-- Privacy-preserving medical AI
-- Federated healthcare analytics
-- Explainable clinical decision support systems
+* Brain tumor MRI images
+* Labeled into multiple tumor categories
+
+---
+
+### 📍 Figshare Dataset
+
+* Publicly available brain MRI dataset
+* Used to improve model generalization
+
+---
+
+## ⚙️ Methodology
+
+### 1️⃣ Data Loading
+
+* Load MRI images from both datasets
+* Organize into class folders
+
+---
+
+### 2️⃣ Preprocessing
+
+* Resize images (e.g., 224×224)
+* Normalize pixel values
+* Apply augmentations:
+
+  * Rotation
+  * Flipping
+  * Scaling
+
+---
+
+### 3️⃣ Model Architecture
+
+Typical pipeline:
+
+* CNN / Transformer backbone
+* Feature extraction
+* Fully connected classification head
+
+---
+
+### 4️⃣ Training Strategy
+
+* Train separately on:
+
+  * Mendeley dataset
+  * Figshare dataset
+* Compare performance across datasets
+* Optional: Combine datasets for better generalization
+
+---
+
+### 5️⃣ Evaluation Metrics
+
+* Accuracy
+* Precision
+* Recall
+* F1-score
+
+---
+
+## 🧪 How to Run
+
+### 🔹 1. Clone Repository
+
+---
+bash id="mnd1"
+git clone https://github.com/your-username/brain-tumor-classification.git
+cd brain-tumor-classification
+```
+
+```
+
+### 🔹 2. Install Dependencies
+
+---
+bash id="mnd2"
+pip install -r requirements.txt
+```
+
+```
+
+### 🔹 3. Run Training
+
+#### ▶ Train on Mendeley Dataset
+
+---
+bash id="mnd3"
+jupyter notebook notebooks/training_mendeley.ipynb
+```
+```
+#### ▶ Train on Figshare Dataset
+
+---
+bash id="mnd4"
+jupyter notebook notebooks/training_figshare.ipynb
+```
+
+```
+
+## 📦 Requirements
+
+---
+id="mnd5"
+torch
+torchvision
+numpy
+pandas
+matplotlib
+scikit-learn
+opencv-python
+```
+
+```
+
+## 📊 Results
+
+| Dataset  | Performance |
+| -------- | ----------- |
+| Mendeley | High        |
+| Figshare | Moderate    |
+| Combined | ✅ Best      |
+
+> Training on multiple datasets improves model robustness and generalization.
+
+---
+
+## 💾 Model Saving
+
+---
+python id="mnd6"
+torch.save(model.state_dict(), "saved_model.pth")
+```
+
+```
+
+## 📈 Future Improvements
+
+* 🔥 Swin Transformer integration
+* 🔥 Hybrid CNN + TCN architecture
+* 🔥 Grad-CAM for explainability
+* 🔥 Cross-dataset validation
+* 🔥 Deployment (Streamlit / Flask)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork and improve the project.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Md Irfanul Kabir**
+AI Researcher | Deep Learning Enthusiast 🚀
+
+---
