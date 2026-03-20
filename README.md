@@ -20,7 +20,7 @@ The goal is to build a **robust deep learning pipeline** that can generalize acr
 
 ## 🏗️ Project Structure
 
----
+```
 
 id="p2a91x"
 Brain-Tumor-Classification/
@@ -51,7 +51,7 @@ Brain-Tumor-Classification/
 
 ```
 
-```
+---
 
 ## 🗂️ Datasets
 
